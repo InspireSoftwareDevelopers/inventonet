@@ -1,0 +1,1596 @@
+
+
+
+/**********************************
+	TABLE OF CONTENTS
+
+01. Preloader 
+02. General Styles
+03. Navigation
+04. Header
+05. Customers
+06. Features
+07. Description
+08. Pricing
+09. Video
+10. Testimonials
+11. Contact
+12. Footer
+13. Header Privacy
+14. Privacy Content
+15. Header Terms
+16. Terms Content
+17. Media Queries
+**********************************/
+
+
+/***** 01. Preloader *****/
+.main-wrapper {
+	overflow: hidden; /* used to keep the scroll bar on the pre-loader screen */
+}
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #298aff; /* change if the mask should have another color then white */
+	z-index: 9999; /* makes sure it stays on top */ 
+}
+
+#status {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 50%; /* centers the loading animation horizontally one the screen */
+	top: 50%; /* centers the loading animation vertically one the screen */
+	background-image: url(../images/preloader-gears.svg); /* path to your loading animation */
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: -100px 0 0 -100px; /* is width and height divided by two */ 
+}
+
+ 
+/***** 02. General Styles *****/
+body {
+	font: 300 16px/1.6em "Source Sans Pro", sans-serif;
+	color: #43474f;
+}
+
+h2 {
+	font: 400 40px/1.2em "Raleway", sans-serif;
+	text-align: center;
+}
+
+h3 {
+	font: 400 34px/1.2em "Raleway", sans-serif;
+}
+
+h4 {
+	font: 600 20px/1.3em "Raleway", sans-serif;
+}
+
+p, a {
+	font: 300 16px/1.6em "Source Sans Pro", sans-serif;
+}
+
+a {
+	font: 400 16px/1.6em "Source Sans Pro", sans-serif;
+	color: #298aff;
+}
+
+a:hover {
+	color: #003459;
+	text-decoration: none;
+}
+
+p.sub-heading {
+	font: 300 20px/1.5em "Source Sans Pro", sans-serif;
+	text-align: center;
+}
+
+.ti-thumb-up {
+	margin-right: 11px;
+	color: #298aff;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.button {
+	border: 2px solid #298aff;
+	color: #298aff;
+	border-radius: 25px;
+	padding: 14px 45px 13px 45px;
+	font: 600 14px/1em "Raleway", sans-serif;
+	display: inline-block;
+	margin-top: 15px;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.button:hover {
+	text-decoration: none;
+	background-color: #298aff;
+	color: #fff;
+}
+
+.read-more {
+	color: #298aff;
+	text-decoration: none;
+	font: 400 18px/1.5em "Source Sans Pro", sans-serif;
+	margin-top: 20px;
+}
+
+.read-more:hover {
+	text-decoration: none;
+	color: #003459;
+}
+
+/* Forms success and error message formatting */
+#rmsgSubmit.h3.text-center.tada.animated.text-success {
+	font: 400 22px/1.5em "Source Sans Pro", sans-serif;
+	color: #fff;
+}
+
+#rmsgSubmit.h3.text-center.text-danger {
+	font: 400 18px/1.5em "Source Sans Pro", sans-serif;
+	color: #ff3030;
+}
+
+#cmsgSubmit.h3.text-center.tada.animated.text-success {
+	font: 400 22px/1.5em "Source Sans Pro", sans-serif;
+	color: #43474f;
+}
+
+#cmsgSubmit.h3.text-center.text-danger {
+	font: 400 22px/1.5em "Source Sans Pro", sans-serif;
+	color: #ff3030;
+}
+
+/* Style Switcher */
+#toggle-switcher {
+	display: block;
+	width: 40px;
+	height: 41px;
+	background: #fff;
+	position: absolute;
+	left: -40px;
+	top: 30px;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-right: none; 
+}
+
+#toggle-switcher img.style-gear {
+	width: 47x;
+	height: 47px;
+	margin-top: -4px;
+	margin-left: -4px;
+}
+
+#style-switcher {
+	position: fixed;
+	z-index: 1000;
+	top: 70px;
+	right: -200px;
+	width: 200px;
+	background: #fff;
+	padding: 10px 10px 12px 10px;
+	border: 1px solid #ddd; 
+	border-radius: 2px;
+}
+
+#style-switcher .style-switcher-cell {
+	display: inline-block;
+	max-width: 78px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+#style-switcher .style-switcher-cell img {
+	margin-top: 10px;
+	width: 78px;
+	height: 48px;
+	display: inline-block;
+}
+
+#style-switcher h1 {
+	font: 600 20px/1.3em "Raleway", sans-serif;
+	text-align: center;
+	color: #3a5c68;
+	margin-top: 0px;
+	margin-left: -11px;
+	margin-bottom: 0px;
+}
+
+#style-switcher a {
+	font: 400 12px/1.2em "Source Sans Pro", sans-serif;
+	color: #4b555d;
+	margin-top: 5px;
+	text-align: right;
+	text-decoration: none; 	
+	display: block;
+	text-align: center;
+}
+
+#style-switcher a:hover {
+	color: #298aff;
+}
+
+#style-switcher .style-switcher-buttons {
+	margin-top: 4px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+#style-switcher a.style-switcher-back-button {
+	padding: 8px 20px 6px 20px;
+	border: 1px solid #298aff;
+	color: #298aff;
+	border-radius: 25px;
+	font: 600 10px/1em "Raleway", sans-serif;
+	display: inline-block;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+	text-align: center;
+}
+
+#style-switcher a.style-switcher-back-button:hover {
+	color: #fff;
+	background-color: #298aff;
+}
+
+#style-switcher a.style-switcher-buy-button {
+	margin-left: 3px;
+	margin-right: 3px;
+	border: 1px solid #298aff;
+	color: #fff;
+	background-color: #298aff;
+	border-radius: 25px;
+	padding: 8px 20px 6px 20px;
+	font: 600 10px/1em "Raleway", sans-serif;
+	display: inline-block;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+	text-align: center;
+}
+
+#style-switcher a.style-switcher-buy-button:hover {
+	color: #fff;
+	background-color: #003459;
+	border: 1px solid #003459;
+}
+
+
+/***** 03. Navigation *****/
+/* Image logo */
+a.navbar-brand.img-logo.scrolling {
+	padding: 0px;
+	margin-left: 0px; 
+}
+
+/* Image logo in mobile mode */
+.navbar-brand.img-logo.scrolling img {
+	margin-left: 15px;
+	margin-top: 10px;
+	width: 45px;
+	height: 40px; 
+}
+
+/* Text logo in mobile mode */
+a.navbar-brand.scrolling {
+	text-decoration: none;
+	font: 300 34px/0.45em "Source Sans Pro", sans-serif;
+	color: #fff;
+	margin-left: 5px; 
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: #003459;
+  border-color: transparent;
+}
+
+.navbar-custom a {
+	font: 600 13px/1em "Raleway", sans-serif; /* menu links font properties */
+}
+
+.navbar-custom .navbar-brand {
+	color: #fff;
+}
+
+.navbar-collapse .navbar-nav {
+	margin-left: 5px; /* margin left indent for menu links in mobile menu */
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+	color: #fff;
+	opacity: 1; 
+}
+
+.navbar-custom .navbar-collapse {
+	border-color: rgba(255, 255, 255, 0.02); 
+}
+
+/* Navbar Call Now Area */
+.navbar-custom .nav li.navbar-call-us {
+	display: none;
+}
+
+/* Mobile Menu Button */
+button.navbar-toggle span.ti-menu {
+	font-size: 24px;
+}
+
+button.navbar-toggle {
+	padding: 6px 10px 4px 10px;
+}
+
+/* Hover color of the menu toggle button */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: #038de4;
+	color: #fff;
+	border-color: #038de4; 
+}
+
+/* Color of the menu toggle button */
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle.collapsed {
+	background-color: #298aff;
+	border-color: #298aff;
+	color: #fff;
+	font: 400 15px/1.2em "Source Sans Pro", sans-serif;
+}
+
+.navbar-custom .nav li a.scrolling {
+	color: #fff;
+	opacity: 0.7;
+	text-decoration: none;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.navbar-custom .nav li a:hover {
+	color: #fff;
+	outline: none;
+	opacity: 1;
+}
+
+.navbar-custom .navbar-nav > .active > a.scrolling {
+	border-radius: 0;
+	color: #fff;
+	background-color: transparent;
+	opacity: 1; 
+}
+
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+	color: #fff;
+	background-color: transparent; 
+}
+
+
+/***** 04. Header *****/
+header {
+	position: relative;
+	min-height: auto;
+	width: 100%;
+	background-color: #365469;
+	/* use the linear gradient to apply a dark overlay on top of your header background image */
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/header-background.jpg") center no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
+	background-attachment: fixed; 
+}
+
+header .flex-container-wrapper {
+	/* IE fix for vertical alignment in flex box */
+	display: flex;
+	flex-direction: column;
+	height: 100%; 
+}
+
+header .header-content {
+	position: relative;
+	width: 100%;
+	padding: 100px 0px;
+	z-index: 2;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 73vh; 
+}
+
+header .header-content h1 {
+	margin-top: 0px;
+	font: 600 46px/1.3em "Raleway", sans-serif;
+	color: #fff;
+}
+
+header .header-content p {
+	font: 300 18px/1.5em "Source Sans Pro", sans-serif;
+	color: #fff;
+	margin-top: 30px;
+}
+
+/* This -snippet is for giving a big enough width to the rotating text in order to avoid jumping layout */
+header .header-content h1 #js-rotating {
+	min-width: 200px;
+	display: inline-block;
+}
+
+header .header-content h1 #js-rotating .animated {
+	background-color: #298aff;
+}
+
+header .header-content form {
+	margin-top: 40px;
+}
+
+header .header-content input,
+header .header-content select {
+	margin-top: 20px;
+	font: 300 16px/1.5em "Source Sans Pro", sans-serif;
+	height: 44px;
+	border-radius: 1px;
+	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+}
+
+header .header-content select.form-control {
+	padding-left: 11px;
+	color: #888;
+	border-radius: 1px;
+}
+
+header .header-content select.form-control option.select-option {
+	color: #000;
+}
+
+header .header-content form button {
+	background-color: #298aff;
+	color: #fff;
+	font: 600 14px/1.6em "Raleway", sans-serif;
+	border: 2px solid #298aff;
+	border-radius: 1px;
+	padding: 11px 30px 10px 30px;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+}
+
+header .header-content form button:hover {
+	background-color: #fff;
+	color: #298aff;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+header .header-ipad {
+	margin: 0px auto 0px auto;
+	max-width: 666px;
+}
+
+
+/***** 05. Customers *****/
+#customers {
+	background-color: #f2f3f5;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#customers img {
+	margin: 20px 17px 20px 17px;
+}
+
+/* Declared half the size of the actual logo dimensions for sharpness on retina */
+.logo-customers-1 {
+	width: 177px;
+	height: 30px;
+}
+
+.logo-customers-2 {
+	width: 166px;
+	height: 30px;
+}
+
+.logo-customers-3 {
+	width: 128px;
+	height: 28px;
+}
+
+.logo-customers-4 {
+	width: 147px;
+	height: 29px;
+}
+
+.logo-customers-5 {
+	width: 143px;
+	height: 32px;
+}
+
+.logo-customers-6 {
+	width: 151px;
+	height: 27px;
+}
+
+
+/***** 06. Features *****/
+#features {
+	padding-top: 70px;
+	padding-bottom: 90px;
+}
+
+#features p.sub-heading {
+	margin-top: 20px;
+}
+
+#features .nav-pills {
+	margin-top: 40px;
+}
+
+#features .nav-pills li a {
+	border: 1px solid #acabab;
+	border-radius: 1px;
+	color: #acabab;
+	padding: 13px 40px 12px 40px;
+	font: 600 16px/1.1em "Raleway", sans-serif;
+	margin-top: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#features .nav-pills li.active a,
+#features .nav-pills li a:hover {
+	border: 1px solid #298aff;
+	color: #fff;
+	background-color: #298aff;
+}
+
+#features .tab-content {
+	margin-top: 20px;
+}
+
+/* Tab_a */
+#features .tab-content .features-icons {
+    font-size: 38px;
+	color: #fff;
+	margin-bottom: 20px;
+	margin-top: 50px;
+	display: inline-block;
+	background-color: #298aff;
+	padding: 30px;
+	border-radius: 100px;
+	border: 2px solid #298aff;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#features .tab-content .features-icons:hover {
+    color: #298aff;
+	border: 2px solid #298aff;
+	background-color: #fff;
+}
+
+/* Tab_b */
+#features .tab-content #tab_b img {
+    margin-top: 60px;
+}
+
+#features .tab-content #tab_b h3 {
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+#features .tab-content #tab_b p {
+	font: 300 18px/1.5em "Source Sans Pro", sans-serif;
+}
+
+/* Tab_c */
+#features .tab-content #tab_c img {
+    margin-top: 60px;
+}
+
+#features .tab-content #tab_c h3 {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+#features .tab-content #tab_c p {
+	font: 300 18px/1.5em "Source Sans Pro", sans-serif;
+}
+
+
+/***** 07. Description *****/
+#description {
+	background-color: #f2f3f5;
+	overflow-x: hidden; /* hides the horizontal scroll-bar generated by the large images */
+}
+
+/* First Pane */
+#description .img-wrapper-right {
+	background: #f2f3f5 url("../images/abt1.jpeg") center no-repeat;
+	height: 300px;
+	background-size: cover;
+}
+
+#description .description-first-pane {
+	margin-top: 60px;
+}
+
+#description .description-first-pane h3 {
+	margin-bottom: 20px;
+}
+
+#description .description-first-pane ul {
+	list-style: none;
+	padding-left: 0px;
+	margin-top: 20px;
+}
+
+#description .description-first-pane ul li {
+	margin-top: 10px;
+}
+
+/* Magnific PopUp FAQ PopUp */
+#small-dialog {
+	background: #fff;
+	padding: 20px 20px 30px 20px;
+	text-align: left;
+	max-width: 600px;
+	margin: 40px auto;
+	position: relative;
+}
+
+#small-dialog h3 {
+	text-align: center;
+	margin-bottom: 35px;
+	margin-top: 20px;
+}
+
+#small-dialog p.faq-question {
+	font: 400 18px/1.4em "Source Sans Pro", sans-serif;
+}
+
+#small-dialog .faq-row {
+	margin-top: 20px;
+}
+
+#small-dialog .bullet-number {
+	width: 39px;
+	height: 39px;
+	background-color: #298aff;
+	color: #fff;
+	text-align: center;
+	font: 600 20px/1.9em "Source Sans Pro", sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	vertical-align: top;
+	margin-top: 6px;
+}
+
+#small-dialog .faq-text {
+	display: inline-block;
+	max-width: 80%;
+	vertical-align: top;
+}
+
+/* Fade-move animation for second dialog */
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	-webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+}
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+	-webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-moz-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-ms-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-o-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+}
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+	opacity: 0;
+	-webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+}
+
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+/* Second Pane */
+#description .img-wrapper-left {
+	background: #f2f3f5 url("../images/abt2.jpg") center no-repeat;
+	background-size: cover;
+	margin-top: 100px;
+	height: 300px;
+}
+
+#description .description-second-pane {
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+
+#description .description-second-pane h3 {
+	margin-bottom: 20px;
+}
+
+#description .description-second-pane ul {
+	list-style: none;
+	padding-left: 0px;
+	margin-top: 20px;
+}
+
+#description .description-second-pane ul li {
+	margin-top: 10px;
+}
+
+#description .description-second-pane .progress {
+	height: 33px;
+	border-radius: 1px;
+	margin-top: 20px; 
+}
+
+#description .description-second-pane .progress-bar {
+	text-align: left;
+	font: 400 14px/22px "Source Sans Pro", sans-serif;
+	background-color: #298aff;
+	color: #fff;
+	padding-left: 20px;
+	padding-top: 5px;
+}
+
+
+/***** 08. Pricing *****/
+#pricing {
+	padding-top: 70px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+
+#pricing p.sub-heading {
+	margin-top: 20px;
+}
+
+#pricing .pricing-pane {
+	border: 2px solid 		#808000;
+	background-color: #fff;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	margin: 50px auto 0px auto;
+	border-radius: 1px;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#pricing .pricing-pane p {
+	font: 300 18px/1.5em "Source Sans Pro", sans-serif;	
+	margin-top: 12px;
+}
+
+#pricing .pricing-pane .price{
+	font: 300 66px/1.1em "Source Sans Pro", sans-serif;
+	color: #298aff;
+}
+
+#pricing .pricing-pane hr {
+	border: 1px solid #298aff;
+	width: 70%;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+#pricing .pricing-pane h4 {
+	margin-top: 30px;
+}
+
+/* Best Value Label */
+ .pricing-pane .label {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.pricing-pane .label .best-value {
+    position: relative;
+    left: -8px;
+    top: 14px;
+    width: 158px;
+    padding: 10px 28px 10px 0px;
+    color: #fff;
+	background-color: 	#808000;
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    -o-transform: rotate(45deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) translate3d(0, 0, 0);
+}
+
+/* Pricing Pane Hover */
+/*#pricing .pricing-pane:hover {
+	border: 2px solid #298aff;
+	background-color: 	#ffff;
+}
+
+#pricing .pricing-pane:hover p {
+	color: #fff;
+}
+
+#pricing .pricing-pane:hover .price{
+	color: #fff;
+}
+
+#pricing .pricing-pane:hover hr {
+	border: 1px solid #fff;
+}
+
+#pricing .pricing-pane:hover h4 {
+	color: #fff;
+}
+
+#pricing .pricing-pane:hover .ti-thumb-up {
+	color: #fff;
+}
+
+#pricing .pricing-pane:hover .button {
+	border: 2px solid #fff;
+	color: #fff;
+}
+
+#pricing .pricing-pane:hover .button:hover {
+	border: 2px solid #298aff;
+	color: #298aff;
+	background-color: #fff;
+}
+
+.pricing-pane:hover .label .best-value {
+    background-color: #fff;
+	color: #298aff;
+}*/
+
+
+/***** 09. Video *****/
+#video {
+	/* use the linear gradient to apply a dark overlay on top of your header background image */
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/video-background.jpg") center no-repeat;
+	background-size: cover;	
+	padding-top: 70px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+
+#video h2, #video p.sub-heading {
+	color: #fff;
+}
+
+#video p.sub-heading {
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+
+/***** 10. Testimonials *****/
+#testimonials {
+	padding-top: 70px;
+	padding-bottom: 100px;
+	background-color: #f2f3f5;
+}
+
+#testimonials p.sub-heading {
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+#testimonials .swiper-container .swiper-wrapper .swiper-slide p {
+	max-width: 70%;
+	margin: 0 auto;
+	font: 300 16px/1.6em "Source Sans Pro", sans-serif;
+}
+
+#testimonials .swiper-container .swiper-wrapper .swiper-slide h4 {
+	margin: 20px auto 0 auto;
+	max-width: 70%;
+}
+
+#testimonials .swiper-container .swiper-wrapper .swiper-slide img.customer-head {
+	margin-bottom: 20px;
+}
+
+#testimonials .swiper-container .swiper-wrapper .swiper-slide img.testimonials-logo {
+	margin-top: 25px;
+}
+
+#testimonials .swiper-container .swiper-button-prev {
+	left: 0px;
+}
+
+#testimonials .swiper-container .swiper-button-next {
+	right: 0px;
+}
+
+
+/***** 11. Contact *****/
+#contact {
+	padding-top: 70px;
+	padding-bottom: 100px;
+}
+
+#contact p.sub-heading {
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+#contact .img-responsive {
+	margin-bottom: 50px;
+}
+
+#contact #ContactForm {
+	margin: 20px auto 0px auto;
+}
+
+/* No margin for the third contact form input: email */
+#contact #ContactForm div:nth-of-type(3) {
+	margin-right: 0px;
+}
+
+#contact #ContactForm input,
+#contact #ContactForm textarea {
+	font: 300 16px/1.5em "Source Sans Pro", sans-serif;
+	height: 44px;
+	border-radius: 1px;
+	margin-top: 20px;
+	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+}
+
+#contact #ContactForm textarea {
+	height: 150px;
+	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+}
+
+#contact #ContactForm button {
+	background-color: #298aff;
+	color: #fff;
+	font: 600 14px/1.5em "Raleway", sans-serif;
+	border: 2px solid #298aff;
+	border-radius: 1px;
+	padding: 12px 30px 10px 30px;
+	display: block;
+	margin: 22px auto 0px auto;
+	width: 100%;
+}
+
+#contact #ContactForm button:hover {
+	border: 2px solid #298aff;
+	background-color: #fff;
+	color: #298aff;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+
+/***** 12. Footer *****/
+#footer {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	background-color: #003459;
+}
+
+#footer h4, #footer p {
+	color: #fff;
+	opacity: 0.85;
+}
+
+#footer h4 {
+	margin-top: 35px;
+}
+
+#footer .social-icons {
+	color: #fff;
+	font-size: 20px;
+	display: inline-block;
+	background-color: #215a82;
+	padding: 10px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+#footer .social-icons:hover {
+	color: #fff;
+	background-color: #298aff;
+	-o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#footer a {
+	color: #67b1e5;
+}
+
+#footer a:hover {
+	color: #fff;
+}
+
+#footer .copyright {
+	margin-top: 40px;
+	text-align: center;
+	font: 300 14px/1.6em "Source Sans Pro", sans-serif;	
+	color: rgba(255, 255, 255, 0.7)
+}
+
+#footer .copyright a {
+	font: 300 14px/1.5em "Source Sans Pro", sans-serif;	
+}
+
+#footer .copyright a.back-to-top {
+	color: #fff;
+}
+
+#footer .copyright .ti-arrow-circle-up {
+	font-size: 16px;
+	vertical-align: middle;
+	margin-bottom: 0.5px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 400;
+	color: #fff;
+}
+
+
+/***** 13. Header Privacy *****/
+#header-privacy {
+	position: relative;
+	min-height: auto;
+	width: 100%;
+	background-color: #003459;
+}
+
+#header-privacy .flex-container-wrapper {
+	/* IE fix for vertical alignment in flex box */
+	display: flex;
+	flex-direction: column;
+	height: 100%; 
+}
+
+#header-privacy .header-privacy-content {
+	position: relative;
+	width: 100%;
+	padding: 120px 0px 80px 0px;
+	z-index: 2;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#header-privacy .header-privacy-content h1 {
+	margin-top: 0px;
+	font: 400 40px/1.1em "Raleway", sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+#header-privacy .ti-lock {
+	margin-right: 15px;
+}
+
+
+/***** 14. Privacy Content *****/
+#privacy-content {
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+#privacy-content h4 {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+#privacy-content ul {
+	padding-left: 15px;
+}
+
+#privacy-content ul li {
+	margin-top: 3px;
+}
+
+#privacy-content .gray-background {
+	background-color: #ebebeb;
+	padding: 35px 35px 30px 15px;
+	margin-top: 20px;
+}
+
+#privacy-content .gray-background ol {
+	counter-reset: awesome-counter;
+	padding-left: 15px;
+}
+
+#privacy-content .gray-background li {
+	list-style: none;
+	margin-top: 3px;
+}
+
+#privacy-content .gray-background ol li:before {
+	content: counter(awesome-counter);
+    counter-increment: awesome-counter;
+	margin-right: 8px;
+	content: counter(awesome-counter) '.';
+}
+
+
+/***** 15. Header Terms *****/
+#header-terms {
+	position: relative;
+	min-height: auto;
+	width: 100%;
+	background-color: #003459;
+}
+
+#header-terms .flex-container-wrapper {
+	/* IE fix for vertical alignment in flex box */
+	display: flex;
+	flex-direction: column;
+	height: 100%; 
+}
+
+#header-terms .header-terms-content {
+	position: relative;
+	width: 100%;
+	padding: 120px 0px 80px 0px;
+	z-index: 2;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#header-terms .header-terms-content h1 {
+	margin-top: 0px;
+	font: 400 40px/1.1em "Raleway", sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+#header-terms .ti-agenda {
+	margin-right: 15px;
+}
+
+
+/***** 16. Terms Content *****/
+#terms-content {
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+#terms-content h4 {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+#terms-content ul {
+	padding-left: 30px;
+}
+
+#terms-content ul li {
+	margin-top: 3px;
+}
+
+
+/***** 17. Media Queries *****/
+/* Min-width width 768px */
+@media (min-width: 768px) {
+	h2 {
+		font: 400 44px/1.1em "Raleway", sans-serif;
+		text-align: center;
+	}
+	
+	h3 {
+		line-height: 1.1em;
+	}
+	
+	/* Style Switcher */
+	#style-switcher {
+		top: 150px;
+	}
+	
+	/* Logo image not affixed */
+	.navbar-brand.img-logo.scrolling img {
+		margin-top: 10px;
+		margin-left: 0px;
+	}
+
+    /* Logo image affixed while scrolling */
+	.navbar.navbar-default.navbar-custom.navbar-fixed-top.affix .navbar-brand.img-logo.scrolling img {
+		margin-top: 8px;
+		margin-left: 0px;
+	}
+
+	/* Logo text not affixed */
+	a.navbar-brand.scrolling {
+		margin-top: -4px;
+		font: 300 38px/0.5em "Source Sans Pro", sans-serif;
+	}
+
+	/* Logo text affixed while scrolling */
+	.navbar.navbar-default.navbar-custom.navbar-fixed-top.affix a.navbar-brand.scrolling {
+		font: 300 34px/0.55em "Source Sans Pro", sans-serif;
+		margin-top: -3px;
+		margin-left: 0px; 
+	}
+
+	.navbar-collapse .navbar-nav {
+		margin-left: 0px; /* margin left reset for menu links */ 
+	}
+
+	.navbar-custom.affix .navbar-brand {
+		font: 300 25px/20px "Roboto", sans-serif;
+	}
+
+	.navbar-custom {
+		background-color: transparent;
+		padding: 25px 0;
+		-webkit-transition: padding 0.3s;
+		-moz-transition: padding 0.3s;
+		transition: padding 0.3s;
+		border: none;
+		opacity: 0.96;
+	}
+
+	.navbar-custom .navbar-brand {
+		font-size: 2em;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s; 
+	}
+
+	.navbar-custom .navbar-nav > .active > a {
+		border-radius: 3px;
+	}
+
+	.navbar-custom.affix {
+		background-color: #003459;
+		padding: 4px 0 3px 0; /* navbar height while scrolling */
+	}
+
+	.navbar-custom .nav li a.scrolling {
+		padding: 13px 12px 10px 12px;
+	}
+	
+	header .header-content {
+		padding: 100px 0px 80px 0px;
+	}
+	
+	header .header-content h1 {
+		font: 600 58px/1.3em "Raleway", sans-serif;
+	}
+
+	header .header-content p {
+		font: 300 20px/1.5em "Source Sans Pro", sans-serif;
+	}
+	
+	header .header-content form {
+		margin-top: 0px;
+	}
+	
+	#features p.sub-heading {
+		margin-top: 10px;
+	}
+
+	#features .nav-pills li {
+		display: inline-block;
+		width: auto;
+	}
+	
+	#features .features-tabs {
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	#description .img-wrapper-right {
+		height: 600px;
+	}
+	
+	#description .img-wrapper-left {
+		height: 600px;
+	}
+	
+	/* Magnific PopUp FAQ PopUp */
+	#small-dialog {
+		padding: 30px 40px 40px 40px;
+	}
+
+	#small-dialog .bullet-number {
+		margin-right: 12px;
+	}
+
+	#small-dialog .faq-text {
+		max-width: 89%;
+	}
+	
+	/* Best Value Label */
+	 .pricing-pane .label {
+		top: 50px;
+	}
+	
+	#pricing p.sub-heading {
+		margin-top: 10px;
+	}
+	
+	#video p.sub-heading {
+		margin-top: 10px;
+	}
+	
+	#testimonials p.sub-heading {
+		margin-top: 10px;
+	}
+	
+	#testimonials .swiper-container .swiper-wrapper .swiper-slide p {
+		max-width: 80%;
+		font: 300 20px/1.6em "Source Sans Pro", sans-serif;
+	}
+	
+	#testimonials .swiper-container .swiper-wrapper .swiper-slide h4 {
+		max-width: 80%;
+	}
+	
+	#testimonials .swiper-container .swiper-button-prev {
+		left: 10px;
+	}
+
+	#testimonials .swiper-container .swiper-button-next {
+		right: 10px;
+	}
+	
+	#contact p.sub-heading {
+		margin-top: 10px;
+	}
+	
+	#footer .copyright {
+		margin-top: 30px;
+	}
+	
+	#header-privacy .header-privacy-content h1 {
+		font: 400 44px/1.1em "Raleway", sans-serif;
+	}
+	
+	#privacy-content ul {
+		padding-left: 25px;
+	}
+
+	#privacy-content .gray-background ol {
+		padding-left: 25px;
+	}
+	
+	#header-terms .header-terms-content h1 {
+		font: 400 44px/1.1em "Raleway", sans-serif;
+	}
+	
+	#terms-content ul {
+		padding-left: 45px;
+	}
+}
+
+
+/* Min-width width 992px */
+@media (min-width: 992px) {
+	header .header-content {
+		padding: 40px 15px 0px 15px;
+	}
+	
+	header .header-content h1 {
+		margin-top: 50px;
+	}
+
+	header .header-content form {
+		margin-top: 30px;
+	}
+	
+	/* Tab_b */
+	#features .tab-content #tab_b h3 {
+		margin-top: 140px;
+	}
+	
+	#features .tab-content .tab-b-right-pane {
+		margin-left: 20px;	
+	}
+	
+	/* Tab_c */
+	#features .tab-content .tab-c-left-pane {
+		margin-right: 40px;	
+	}
+	
+	/* First Pane */
+	#description .img-right {
+		max-width: none;
+		max-height: 600px;
+	}
+	
+	#description .description-first-pane {
+		max-width: 410px;
+		margin-right: 50px;
+		margin-top: 90px;
+		float: right;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	/* Second Pane */
+	#description .img-wrapper-left {
+		margin-top: 0px;
+	}
+	
+	#description .description-second-pane {
+		max-width: 410px;
+		margin-left: 40px;
+		margin-top: 80px;
+		margin-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	#contact .img-responsive {
+		margin-bottom: 0px;
+	}
+	
+	#contact .form-same-line {
+		display: inline-block;
+		margin-right: 10px;
+		width: 31.4%;
+	}
+	
+	#contact #ContactForm, #contact #ContactForm input {
+		margin-top: 0px;
+	}
+	
+	#contact #ContactForm textarea {
+		margin-top: 4px;
+		height: 174px;
+	}
+	
+	#contact #ContactForm button {
+		margin-top: 18px;
+		width: auto;
+	}
+}
+
+
+/* Min-width width 1200px */
+@media (min-width: 1200px) {
+	
+	/* Navbar Call Now Area */
+	.navbar-custom .nav li.navbar-call-us {
+		display: block;
+		font: 600 12px/1em "Raleway", sans-serif;
+		color: #fff;	 
+		padding: 9px 12px 10px 12px;
+		border: 1px solid #fff;
+		border-radius: 1px;
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top: 6px;
+	}
+	
+	.navbar-custom .nav li.navbar-call-us span {
+		margin-right: 5px;
+	}
+	
+	header .header-content h1 {
+		margin-left: 70px;
+		margin-right: 30px;
+	}
+
+	header .header-content p {
+		margin-left: 70px;
+		margin-right: 30px;
+	}
+	
+	header .header-content form {
+		max-width: 334px;
+		margin-left: 40px;
+	}
+	
+	#features .tab-content #tab_b h3 {
+		margin-top: 190px;
+	}
+
+	#features .tab-content #tab_c h3 {
+		margin-top: 160px;
+	}
+	
+	#description .description-first-pane {
+		max-width: 510px;
+		margin-top: 100px;
+	}
+	
+	#description .description-second-pane {
+		max-width: 510px;
+		margin-top: 90px;
+	}
+	
+	#contact .form-same-line {
+		margin-right: 12px;
+	}
+	
+	#contact #ContactForm textarea {
+		margin-top: 8px;
+		height: 231px;
+	}
+	
+	#contact #ContactForm button {
+		margin-top: 24px;
+	}
+}
+
+
+.my-float{
+    margin-top:16px;
+}
